@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Geomini", sans-serif;
+}
+
+body{
+    background:#000;
+}
+
+.header{
+    width:100%;
+    height:70px;
+    padding:0 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.nav{
+    position:absolute;
+    top:70px;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#111;
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+    border-bottom:1px solid #222;
+    transition:.3s;
+}
+
+.nav a:hover{
+    background:#222;
+}
+
+.nav.active{
+    max-height:400px;
+}
+
+/* Desktop */
+
+@media(min-width:768px){
+
+    
+
+    .menu-btn{
+        display:none;
+    }
+
+    .nav{
+        position:static;
+        max-height:none;
+        width:auto;
+        background:none;
+
+        display:flex;
+        flex-direction:row;
+        gap:30px;
+    }
+
+    .nav a{
+        border:none;
+        padding:0;
+    }
+
+    .nav a:hover{
+        background:none;
+        color:#ffd700;
+    }
+
+}
+
+@media (min-width: 430px){
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+}
