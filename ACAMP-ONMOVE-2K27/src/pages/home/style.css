@@ -1,184 +1,353 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Geomini", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Geomini", sans-serif;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-
-  background:
-      radial-gradient(circle at top,
-      rgba(0,255,255,.18),
-      transparent 40%),
-
-      radial-gradient(circle at bottom,
-      rgba(255,0,255,.12),
-      transparent 45%),
-
-      linear-gradient(
-      180deg,
-      #2613ff,
-      #1700ad,
-      #09004d),
-
-      url("..//..//assets/Texture.jpg");
-
-  background-repeat:
-      no-repeat,
-      no-repeat,
-      no-repeat,
-      repeat;
-
-  background-size:
-      cover,
-      cover,
-      cover,
-      200px;
-
-  background-blend-mode:
-      screen,
-      screen,
-      normal,
-      overlay;
-
+    margin: 0;
+    background-color: #0a0a0a;
 }
 
-
-/* Header inicio*/
-.header{
-    width:100%;
-    height:70px;
-    padding:0 25px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:rgba(0,0,0,.7);
-    backdrop-filter:blur(10px);
-
-    color:white;
-
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
+/* Container Principal */
+.main-container {
+    background-color: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.menu-btn{
-    background:none;
-    border:none;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
-}
-
-.nav{
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-
-    display:flex;
-    flex-direction:column;
-
-    background:#111;
-
-    max-height:0;
-    overflow:hidden;
-
-    transition:.4s;
-}
-
-.nav a{
-    color:white;
-    text-decoration:none;
-    padding:18px 25px;
-    border-bottom:1px solid #222;
-    transition:.3s;
-}
-
-.nav a:hover{
-    background:#222;
-}
-
-.nav.active{
-    max-height:400px;
-}
-
-.sobre-nos{
+/* Header */
+.header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(10, 10, 10, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ffcc00;
+}
+
+.btn-nav-inscricao {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-nav-inscricao:hover {
+    transform: scale(1.05);
+}
+
+/* Seção Hero (Inicial) */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 }
 
-.logo-acamp {
-    width: 900px;
+.hero-logo-img {
+    max-width: 400px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #ccc;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Seções de Conteúdo (Z-Pattern) */
+.content-section {
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 5%;
+    gap: 50px;
+}
+
+.content-section.reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.bg-darker {
+    background-color: #111;
+}
+
+/* Blocos de Texto e Imagem */
+.text-block {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.image-block {
+    flex: 1 1 400px;
+    max-width: 600px;
+}
+
+.image-block.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid #333;
+}
+
+/* Tipografia das Seções */
+.sub-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.color-yellow { color: #ffcc00; }
+.color-red { color: #ff2a2a; }
+.color-blue { color: #00aaff; }
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.section-text {
+    font-size: 1.2rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Call to Action (Inscrição) */
+.cta-section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    text-align: center;
+    background-image: linear-gradient(0deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.cta-title {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1.5rem;
+    color: #ccc;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.btn-cta {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+}
+
+/* Modal de Inscrição */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 
-/* Local Section */
-.local {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 70px;
-  display: flex;
-  justify-content: center;
-  transition: background-image 0.8s ease-in-out;
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    border: 1px solid #444;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-.local h1 {
-  color: white;
-  font-size: 3rem;
-  text-shadow: 2px 2px 10px rgba(0,0,0,.7);
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-/* Desktop */
-
-@media(min-width:768px){
-
-    
-
-    .menu-btn{
-        display:none;
-    }
-
-    .nav{
-        position:static;
-        max-height:none;
-        width:auto;
-        background:none;
-
-        display:flex;
-        flex-direction:row;
-        gap:30px;
-    }
-
-    .nav a{
-        border:none;
-        padding:0;
-    }
-
-    .nav a:hover{
-        background:none;
-        color:#ffd700;
-    }
-
+.modal-title {
+    font-size: 2rem;
+    margin: 0;
+    color: #ffcc00;
 }
 
-/* Mobile */
-@media (min-width: 430px){
-    .logo{
-        width: 100px;
-        height: auto;
+.btn-close-modal {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    border-left: 4px solid #ff2a2a;
+}
+
+.form-checkbox input {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+}
+
+.form-checkbox label {
+    font-size: 0.95rem;
+    cursor: pointer;
+    line-height: 1.4;
+    color: #ddd;
+}
+
+.btn-submit {
+    padding: 18px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        display: none; /* Aqui você pode integrar aquela sua lógica de menu dropdown depois */
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .content-section {
+        padding: 15% 5%;
+        text-align: center;
     }
 }
